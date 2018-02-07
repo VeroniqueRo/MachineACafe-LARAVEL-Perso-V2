@@ -51,6 +51,10 @@ Route::get('/modif/{id}','BoissonController@edit')->name('formModifBoissons');
 
 Route::post('/Liste_boissons/{id}','BoissonController@update')->name('modifBoissons');
 
+    // Routes pour supprimer une boisson
+
+Route::get('/Liste_boissons/{id}','BoissonController@destroy')->name('deleteBoissons');
+
     // Routes vers la fiche d'une boisson
 
 Route::get('/boissons/{id}','BoissonController@detailsBoissons');

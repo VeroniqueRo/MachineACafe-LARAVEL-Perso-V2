@@ -26,7 +26,7 @@
                 <td>{{$boisson->prix}} cts</td>
                 <td><a href="/boissons/{{$boisson->id}}">Détail</a></td>
                 <td><a href="/modif/{{$boisson->id}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
-                <td><button type="button" class="btn btn-danger">Effacer</button></td>
+                <td><a href="{{ route('deleteBoissons',[$boisson->id])}}"><button type="button" class="btn btn-danger">Effacer</button></a></td>
             </tr>
             @endforeach
         </table>        
@@ -34,6 +34,3 @@
     </div>
 </div>    
 @endsection
-
-Ordre par nom
-      <a href="{{ url('/boissons/lister_et_trier_prix')}}">Ordre par prix</a>

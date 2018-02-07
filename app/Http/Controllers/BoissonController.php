@@ -59,6 +59,8 @@ class BoissonController extends Controller
     
     }
 
+    // Fonctions d'ajout d'une boisson
+
     public function create() {
 
         return view('boissons.ajout-boissons');
@@ -97,4 +99,15 @@ class BoissonController extends Controller
         return redirect('/Liste_boissons');
 
     }
+
+    public function destroy($id)
+
+    {
+        $deleteBoisson = Boisson::find($id);
+        $deleteBoisson->delete();
+
+        return redirect('/Liste_boissons');
+
+    }
+
 }
