@@ -10,8 +10,8 @@
       <form class="" action="{{route('modifBoissons', [$boissonAModifier->id])}}" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            {{--  <label for="codeboisson">Code</label>
-            <input type="text" class="form-control" value="{{$boissonAModifier->code}}" name="newcode" placeholder="entrer le nouveau code de la boisson">  --}}
+            <label for="codeboisson">Code</label>
+            <input type="text" class="form-control" value="{{$boissonAModifier->code}}" name="newcode" placeholder="entrer le nouveau code de la boisson">
           </div>
           <div class="form-group">
               <label for="nomboisson">Nom de la Boisson</label>

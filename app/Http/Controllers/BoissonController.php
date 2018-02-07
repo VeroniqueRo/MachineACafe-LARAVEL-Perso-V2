@@ -67,12 +67,12 @@ class BoissonController extends Controller
     public function store(Request $request)
 
     {
-        $boisson = new Boisson();
-        $boisson->code = $request->codeboisson;
-        $boisson->nom = $request->nomboisson;
-        $boisson->prix = $request->prixboisson;
+        $newBoisson = new Boisson();
+        $newBoisson->code = $request->codeboisson; // $request->input('codeboisson');
+        $newBoisson->nom = $request->nomboisson;
+        $newBoisson->prix = $request->prixboisson;// l'attribut de l'objet Boisson prend la valeur entrée dans le formulaire
         
-        $boisson->save();
+        $newBoisson->save();
         return redirect('/Liste_boissons');
 
     }
@@ -88,7 +88,7 @@ class BoissonController extends Controller
     {
         $modifBoisson = Boisson::find($id);
 
-        // $modifBoisson->code = request('newcode');
+        $modifBoisson->code = request('newcode');
         $modifBoisson->nom = request('newnom');
         $modifBoisson->prix = request('newprix');
         

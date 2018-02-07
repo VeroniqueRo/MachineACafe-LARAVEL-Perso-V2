@@ -25,9 +25,11 @@ Route::get('/recettes','RecetteController@listRecettes');
 
 Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 
-//Boissons
+// Boissons
 
 Route::get('/Liste_boissons','BoissonController@afficheBoissons')->name('listeBoissons');
+
+    // Routes pour les tris du tableau des boissons
 
 Route::get('/boissons-AZ','BoissonController@triNomBoissonsAZ')->name('triAZ');
 
@@ -37,13 +39,19 @@ Route::get('/prix-UP','BoissonController@triPrixBoissonsCroissant')->name('triPr
 
 Route::get('/prix-DOWN','BoissonController@triPrixBoissonsDecroissant')->name('triPrixDecroissant');
 
+    // Routes du formulaire d'ajout d'une boisson
+
 Route::get('/boissons/ajouter-boisson','BoissonController@create')->name('formAjoutBoisson');
 
 Route::post('/boissons/liste_des_boissons','BoissonController@store')->name('ajoutBoissons');
 
+    // Routes du formulaire de modification d'une boisson
+
 Route::get('/modif/{id}','BoissonController@edit')->name('formModifBoissons');
 
 Route::post('/Liste_boissons/{id}','BoissonController@update')->name('modifBoissons');
+
+    // Routes vers la fiche d'une boisson
 
 Route::get('/boissons/{id}','BoissonController@detailsBoissons');
 
