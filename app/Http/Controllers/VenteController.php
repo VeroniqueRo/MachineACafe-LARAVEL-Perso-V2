@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Vente;
 
 class VenteController extends Controller{
 /**Affiche toutes les ventes passées */
