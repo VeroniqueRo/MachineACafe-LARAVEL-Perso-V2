@@ -27,7 +27,7 @@ class RecetteController extends Controller
   	            );
 
    
-     return view('recettes',compact('recette'));
+     return view('recettes.lister-recettes',compact('recette'));
 	}
 }
 ?>

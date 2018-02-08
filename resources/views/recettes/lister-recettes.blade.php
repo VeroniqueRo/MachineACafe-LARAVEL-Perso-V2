@@ -27,7 +27,7 @@
 			@endforeach
 		</table>
 	</div> 
-	@include("template.boutonAddRemoveModif");
+
 @endsection
 
 

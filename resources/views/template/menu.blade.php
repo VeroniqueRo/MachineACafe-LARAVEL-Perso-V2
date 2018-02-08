@@ -4,8 +4,8 @@
       <a href="{{ url('/machineACafe')}}">Machine à Café</a>
       <a href="{{ route('listeBoissons')}}">Boissons</a>
       <a href="{{ route('listeIngredients')}}">Ingrédients</a>
-      <a href="{{ url('/recettes')}}">Recettes</a>
-      <a href="{{ url('/ventes')}}">Ventes</a>
+      <a href="{{ route('listeRecettes')}}">Recettes</a>
+      <a href="{{ route('listeVentes')}}">Ventes</a>
       <a href="{{ url('/gestionMonnaie')}}">Gestion Monnaie</a>
   </div>
 </div>
