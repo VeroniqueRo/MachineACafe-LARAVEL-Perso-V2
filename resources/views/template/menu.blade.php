@@ -2,10 +2,10 @@
   <div class="links">
       <a href="../">Home</a>
       <a href="{{ url('/machineACafe')}}">Machine à Café</a>
-      <a href="{{ route('listeBoissons')}}">Liste des Boissons</a>
-      <a href="{{ url('/recettes')}}">Liste des Recettes</a>
-      <a href="{{ url('/ingredients')}}">Liste des Ingrédients</a>
-      <a href="{{ url('/ventes')}}">Liste des Ventes</a>
+      <a href="{{ route('listeBoissons')}}">Boissons</a>
+      <a href="{{ route('listeIngredients')}}">Ingrédients</a>
+      <a href="{{ url('/recettes')}}">Recettes</a>
+      <a href="{{ url('/ventes')}}">Ventes</a>
       <a href="{{ url('/gestionMonnaie')}}">Gestion Monnaie</a>
   </div>
 </div>

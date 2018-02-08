@@ -10,14 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'IndexController@bienvenue');
 
 Route::get('/machineACafe','MachineACafeController@listDrink');
 
-
-// Ingrédients
-Route::get('/ingredients','IngredientController@listIngredients');
+// Routes d'avant
 
 Route::get('/ventes','VenteController@listeVente');
 
@@ -25,7 +22,9 @@ Route::get('/recettes','RecetteController@listRecettes');
 
 Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 
-// Boissons
+/////////////////////////////////////////////////////////////////////////////////////
+// ROUTES POUR LA GESTION DES BOISSONS
+/////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/Liste_boissons','BoissonController@afficheBoissons')->name('listeBoissons');
 
@@ -47,7 +46,7 @@ Route::post('/boissons/liste_des_boissons','BoissonController@store')->name('ajo
 
     // Routes du formulaire de modification d'une boisson
 
-Route::get('/modif/{id}','BoissonController@edit')->name('formModifBoissons');
+Route::get('/modif_boissons/{id}','BoissonController@edit')->name('formModifBoissons');
 
 Route::post('/Liste_boissons/{id}','BoissonController@update')->name('modifBoissons');
 
@@ -59,4 +58,41 @@ Route::get('/Liste_boissons/{id}','BoissonController@destroy')->name('deleteBois
 
 Route::get('/boissons/{id}','BoissonController@detailsBoissons');
 
+/////////////////////////////////////////////////////////////////////////////////////
+// ROUTES POUR LA GESTION DES INGREDIENTS
+/////////////////////////////////////////////////////////////////////////////////////
+
+// Route::get('/ingredients','IngredientController@listIngredients');// Version sans Model
+
+Route::get('/Liste_ingredients','IngredientController@afficheIngredients')->name('listeIngredients');
+    
+    // Routes pour les tris du tableau des ingredients
+
+Route::get('/ingredients-AZ','IngredientController@triNomIngredientsAZ')->name('triAZ-I');
+
+Route::get('/ingredients-ZA','IngredientController@triNomIngredientsZA')->name('triZA-I');
+
+Route::get('/stock-UP','IngredientController@triPrixIngredientsCroissant')->name('triStockCroissant-I');
+
+Route::get('/stock-DOWN','IngredientController@triPrixIngredientsDecroissant')->name('triStockDecroissant-I');
+
+    // Routes du formulaire d'ajout d'un ingredient
+
+Route::get('/ingredients/ajouter-ingredient','IngredientController@create')->name('formAjoutIngredient');
+
+Route::post('/ingredients/liste_des_ingredients','IngredientController@store')->name('ajoutIngredients');
+
+    // Routes du formulaire de modification d'un ingredient
+
+Route::get('/modif_ingredients/{id}','IngredientController@edit')->name('formModifIngredients');
+
+Route::post('/Liste_ingredients/{id}','IngredientController@update')->name('modifIngredients');
+
+    // Routes pour supprimer un ingredient
+
+Route::get('/Liste_ingredients/{id}','IngredientController@destroy')->name('deleteIngredients');
+
+    // Routes vers la fiche d'un ingredient
+
+Route::get('/ingredients/{id}','IngredientController@detailsIngredients');
 ?>

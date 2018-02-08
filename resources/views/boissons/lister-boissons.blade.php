@@ -17,15 +17,13 @@
                 </td>
                 <td><b>Fiche détaillée</b></td>
                 <td colspan=2><b>Gestion</b></td>
-                {{--  <td><b>Modifier</b></td>
-                <td><b>Effacer</b></td>  --}}
             </tr>
             <tr>  
                 @foreach($boissons as $boisson)
                 <td>{{$boisson->nom}}</td>
                 <td>{{$boisson->prix}} cts</td>
                 <td><a href="/boissons/{{$boisson->id}}">Détail</a></td>
-                <td><a href="/modif/{{$boisson->id}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                <td><a href="{{ route('formModifBoissons',[$boisson->id])}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
                 <td><a href="{{ route('deleteBoissons',[$boisson->id])}}"><button type="button" class="btn btn-danger">Effacer</button></a></td>
             </tr>
             @endforeach

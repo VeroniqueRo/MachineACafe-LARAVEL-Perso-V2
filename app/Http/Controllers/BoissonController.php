@@ -42,7 +42,7 @@ class BoissonController extends Controller
     
     }
 
-    // Méthode pour afficher les boissons en suivant un lien avec le Model
+    // Méthode pour afficher le détail des boissons en suivant un lien avec le Model
     function detailsBoissons($id) {
         
         $boissons = Boisson::where('id',$id)->get();
