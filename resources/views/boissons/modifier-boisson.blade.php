@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('titre')
-  Modifier "{{$boissonAModifier->nom}}"
+  Modifier {{$boissonAModifier->nom}}
 @endsection
 
 @section('content')

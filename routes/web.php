@@ -16,7 +16,7 @@ Route::get('/machineACafe','MachineACafeController@listDrink');
 
 // Routes d'avant
 
-Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
+
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES BOISSONS
@@ -103,13 +103,19 @@ Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 // ROUTES POUR LA GESTION DES RECETTES
 /////////////////////////////////////////////////////////////////////////////////////
 
-        Route::get('/Liste_recettes','RecetteController@listerRecettes')->name('listeRecettes');
+        Route::get('/Liste_recettes','RecetteController@index')->name('listeRecettes');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES VENTES
 /////////////////////////////////////////////////////////////////////////////////////
 
-        Route::get('/Liste_ventes','VenteController@listeVente')->name('listeVentes');
+        Route::get('/Liste_ventes','VenteController@index')->name('listeVentes');
+
+/////////////////////////////////////////////////////////////////////////////////////
+// ROUTES POUR LA GESTION DE LA MONNAIE
+/////////////////////////////////////////////////////////////////////////////////////
+
+        Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 
     
 ?>

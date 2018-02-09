@@ -1,58 +1,83 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Vente;
 
-class VenteController extends Controller{
-/**Affiche toutes les ventes passées */
+use Illuminate\Http\Request;
+use App\Vente;// lien vers le modèle de la classe vente
+use App\Boisson;// lien vers le modèle de la classe boisson
 
- public function listeVente() {
-  
-    $venteTab = array (
-      array (
-        "N°" => "1",
-        "Boisson commandée" => "Café",  
-        "Date" => "2018/01/04",
-        "Heure" => "08:17:57",
-        "Nb de sucres" => "0",
-     
-      ),
-      array (
-        "N°" => "2",
-        "Boisson commandée" => "Thé",  
-        "Date" => "2018/01/04",
-        "Heure" => "09:17:57",
-        "Nb de sucres" => "1",
-       
-      ),
-      array (
-        "N°" => "3",
-        "Boisson commandée" => "Expresso",  
-        "Date" => "2018/01/14",
-        "Heure" => "18:17:02",
-        "Nb de sucres" => "5",
+class VenteController extends Controller
+{
+    // Méthode pour lister les ventes
+    public function index() {
         
-      ),
-      array (
-        "N°" => "4",
-        "Boisson commandée" => "Expresso",  
-        "Date" => "2018/01/15",
-        "Heure" => "08:17:02",
-        "Nb de sucres" => "2",
+        $ventes = Vente::all();// Appelle la classe pour ajouter toutes les données
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
-      ),
-      array (
-        "N°" => "5",
-        "Boisson commandée" => "Thé",  
-        "Date" => "2018/01/16",
-        "Heure" => "10:17:57",
-        "Nb de sucres" => "1",
-   
-      ),
-    );
-    
-    return view("ventes.lister-ventes",["RetourTab" => $venteTab]);
-  }
-}
-?>
+    }
 
+    // // Méthode pour lister les ventes par ordre alphabéthique
+    // function triNomVentesAZ() {
+        
+    //     $ventes = Vente::orderBy('ingredient')->get();// Ordonne par ordre alpha les ingredients de ventes
+
+    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    // }
+
+    // // Méthode pour lister les ventes par ordre alphabéthique
+    // function triNomVentesZA() {
+        
+    //     $ventes = Vente::orderBy('ingredient','DESC')->get();// Ordonne par ordre alpha inverse
+
+    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    // }  
+
+    // // Méthode pour lister les ventes par ordre de dose
+    // function triDoseVentesCroissant() {
+        
+    //     $ventes = Vente::orderBy('dose','ASC')->get();// Ordonne par ordre croissant de dose
+    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    // }
+
+    // // Méthode pour lister les ventes par ordre de dose
+    // function triDoseVentesDecroissant() {
+        
+    //     $ventes = Vente::orderBy('dose','DESC')->get();// Ordonne par ordre décroissant de dose
+    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    // }
+
+    // // Méthode pour afficher le détail des ventes en suivant un lien
+    // function detailsVente($id) {
+        
+    //     $ventes = Vente::where('id',$id)->get();
+
+    //     return view('ventes.detail-vente', ['vente'=>$ventes[0]]);
+    
+    // }
+
+    // Fonctions d'ajout d'une vente
+    // public function store(Request $request)
+
+    // {
+    //     $newVente = new Vente();
+    //     //récupère dans le model Boisson un tableau avec la liste des boissons. [0]:position 0 du tableau
+    //     $boisson = Boisson::whereNom(request('8'))->get()[0];
+    //     $newVente->boisson_id = $boisson->id;
+    //     $newVente->nbSucre = request('5');
+        
+    //     $newVente->save();
+    //     return redirect('/Liste_ventes');
+
+    // }
+
+    
+
+    
+
+    
+
+}
