@@ -7,6 +7,7 @@
 @section('content')
 
   <div class="container">
+      <hr>
       <form class="" action="{{route('deleteIngredient', [$ingredientASupprimer->id])}}" method="post">
           {{ csrf_field() }} {{-- Protection contre les attaques d'injection SQL--}}
           {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_token" value="clé de sécurité">--}}
@@ -17,6 +18,10 @@
             {{$ingredientASupprimer->nom}} de la base de données ?</h3><br>
         </div>
         <button type="submit" class="btn btn-primary">Supprimer de la BDD</button>
+        <hr>
+        <a href="{{ route('listeIngredients')}}">
+        <button type="button" class="btn btn-success">Annuler</button>
+        </a>
       </form>
   </div>
 

@@ -7,6 +7,7 @@
 @section('content')
 
   <div class="container">
+      <hr>
       <form class="" action="{{route('modifIngredient', [$ingredientAModifier->id])}}" method="post">
           {{ csrf_field() }}
           {{ method_field('PUT') }} 
@@ -19,6 +20,10 @@
               <input type="text" class="form-control" value="{{$ingredientAModifier->stock}}" name="newstock" placeholder="entrer le  nouveau stock de l'ingredient">
           </div>
           <button type="submit" class="btn btn-primary">Modifier la BDD</button>
+          <hr>
+          <a href="{{ route('listeIngredients')}}">
+          <button type="button" class="btn btn-success">Annuler</button>
+          </a>
       </form>
   </div>
 

@@ -7,6 +7,7 @@
 @section('content')
 
   <div class="container">
+      <hr>
       <form class="" action="{{route('ajoutIngredients')}}" method="post">
           {{ csrf_field() }}
           <div class="form-group">
@@ -18,6 +19,10 @@
             <input type="text" class="form-control" name="stockingredient" placeholder="entrer le stock de l'ingredient">
           </div>
           <button type="submit" class="btn btn-primary">Ajouter à la BDD</button>
+          <hr>
+          <a href="{{ route('listeIngredients')}}">
+          <button type="button" class="btn btn-success">Annuler</button>
+          </a>
       </form>
   </div>
 

@@ -61,17 +61,16 @@ class IngredientController extends Controller
 
 	}
 
-	// Méthode pour afficher le détail des ingredients en suivant un lien avec le Model
-	function detailsIngredients($id) {
+	// // Méthode pour afficher le détail d'un ingredient en suivant un lien avec le Model
+	// function detailsIngredients($id) {
 			
-			$ingredients = Ingredient::where('id',$id)->get();
+	// 		$ingredients = Ingredient::where('id',$id)->get();
 
-			return view('ingredients.detail-ingredient', ['ingredients'=>$ingredients[0]]);
+	// 		return view('ingredients.detail-ingredient', ['ingredient'=>$ingredients[0]]);
 
-	}
+	// }
 
 	// Fonctions d'ajout d'un ingredient
-
 	public function create() {
 
 			return view('ingredients.ajout-ingredient');
@@ -89,6 +88,7 @@ class IngredientController extends Controller
 
 	}
 
+	// Fonctions de modification d'un ingredient
 	public function edit($id) {
 
 			$ingredient = Ingredient::where('id',$id)->get();
@@ -109,6 +109,7 @@ class IngredientController extends Controller
 
 	}
 
+	// Fonctions de suppression d'un ingredient
 	public function supprime($id) {
 
         $ingredient = Ingredient::where('id',$id)->get();

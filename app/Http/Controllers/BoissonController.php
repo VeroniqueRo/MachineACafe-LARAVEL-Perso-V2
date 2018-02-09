@@ -47,7 +47,7 @@ class BoissonController extends Controller
         
         $boissons = Boisson::where('id',$id)->get();
 
-        return view('boissons.detail-boisson', ['boissons'=>$boissons[0]]);
+        return view('boissons.detail-boisson', ['boisson'=>$boissons[0]]);
     
     }
 
