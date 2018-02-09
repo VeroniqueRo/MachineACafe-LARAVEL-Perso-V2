@@ -17,7 +17,7 @@
             <h3>Voulez-vous vraiment supprimer<br>
             {{$ingredientASupprimer->nom}} de la base de données ?</h3><br>
         </div>
-        <button type="submit" class="btn btn-primary">Supprimer de la BDD</button>
+        <button type="submit" class="btn btn-danger">Supprimer de la BDD</button>
         <hr>
         <a href="{{ route('listeIngredients')}}">
         <button type="button" class="btn btn-success">Annuler</button>

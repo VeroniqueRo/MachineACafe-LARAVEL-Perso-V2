@@ -7,20 +7,8 @@ use App\Ingredient;// lien vers la classe Ingrédient
 class IngredientController extends Controller
 {
 
-//   function listIngredients() {
-//   	$ingredients = array(
-//   		'Café' => 100,
-//   		'Eau'=> 100,
-//   		'Thé'  => 100,
-//   		'Lait' => 100,
-//       'Sucre' => 100
-// 			);
-			
-//      return view('ingredients', compact('ingredients'));
-//  }
-
 	// Méthode pour lister les ingredients avec le Model
-	public function afficheIngredients() {
+	public function index() {
 					
 		$ingredients = Ingredient::all();// Appelle la classe pour ajouter toutes les données
 		return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);

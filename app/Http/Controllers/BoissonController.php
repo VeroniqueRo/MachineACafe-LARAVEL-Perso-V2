@@ -7,8 +7,15 @@ use App\Boisson;// lien vers la classe Boisson
 
 class BoissonController extends Controller
 {
+    // Méthode pour lister les boissons
+    public function index() {
+        
+        $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
+        return view('boissons.lister-boissons', ['boissons'=>$boissons]);
     
-    // Méthode pour lister les boissons par ordre alphabéthique avec le Model
+    }
+
+    // Méthode pour lister les boissons par ordre alphabéthique
     function triNomBoissonsAZ() {
         
         $boissons = Boisson::orderBy('nom')->get();// Ordonne par ordre alpha les noms de boissons
@@ -17,7 +24,7 @@ class BoissonController extends Controller
     
     }
 
-    // Méthode pour lister les boissons par ordre alphabéthique avec le Model
+    // Méthode pour lister les boissons par ordre alphabéthique
     function triNomBoissonsZA() {
         
         $boissons = Boisson::orderBy('nom','DESC')->get();// Ordonne par ordre alpha inverse
@@ -26,7 +33,7 @@ class BoissonController extends Controller
     
     }  
 
-    // Méthode pour lister les boissons par ordre de prix avec le Model
+    // Méthode pour lister les boissons par ordre de prix
     function triPrixBoissonsCroissant() {
         
         $boissons = Boisson::orderBy('prix','ASC')->get();// Ordonne par ordre croissant de prix
@@ -34,7 +41,7 @@ class BoissonController extends Controller
     
     }
 
-    // Méthode pour lister les boissons par ordre de prix avec le Model
+    // Méthode pour lister les boissons par ordre de prix
     function triPrixBoissonsDecroissant() {
         
         $boissons = Boisson::orderBy('prix','DESC')->get();// Ordonne par ordre décroissant de prix
@@ -42,7 +49,7 @@ class BoissonController extends Controller
     
     }
 
-    // Méthode pour afficher le détail des boissons en suivant un lien avec le Model
+    // Méthode pour afficher le détail des boissons en suivant un lien
     function detailsBoisson($id) {
         
         $boissons = Boisson::where('id',$id)->get();
@@ -51,16 +58,7 @@ class BoissonController extends Controller
     
     }
 
-    // Méthode pour lister les boissons avec le Model
-    public function index() {
-        
-        $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
-        return view('boissons.lister-boissons', ['boissons'=>$boissons]);
-    
-    }
-
     // Fonctions d'ajout d'une boisson
-
     public function create() {
 
         return view('boissons.ajout-boisson');
@@ -79,6 +77,7 @@ class BoissonController extends Controller
 
     }
 
+    // Fonctions de modification d'une boisson
     public function edit($id) {
 
         $boisson = Boisson::where('id',$id)->get();
@@ -100,6 +99,7 @@ class BoissonController extends Controller
 
     }
 
+    // Fonctions de supprimer d'une boisson
     public function supprime($id) {
 
         $boisson = Boisson::where('id',$id)->get();
