@@ -43,16 +43,16 @@ class BoissonController extends Controller
     }
 
     // Méthode pour afficher le détail des boissons en suivant un lien avec le Model
-    function detailsBoissons($id) {
+    function detailsBoisson($id) {
         
         $boissons = Boisson::where('id',$id)->get();
 
-        return view('boissons.detail-boissons', ['boissons'=>$boissons[0]]);
+        return view('boissons.detail-boisson', ['boissons'=>$boissons[0]]);
     
     }
 
     // Méthode pour lister les boissons avec le Model
-    public function afficheBoissons() {
+    public function index() {
         
         $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
         return view('boissons.lister-boissons', ['boissons'=>$boissons]);
@@ -63,7 +63,7 @@ class BoissonController extends Controller
 
     public function create() {
 
-        return view('boissons.ajout-boissons');
+        return view('boissons.ajout-boisson');
     }
 
     public function store(Request $request)
@@ -82,7 +82,7 @@ class BoissonController extends Controller
     public function edit($id) {
 
         $boisson = Boisson::where('id',$id)->get();
-        return view('boissons.modifier-boissons', ['boissonAModifier'=>$boisson[0]]);
+        return view('boissons.modifier-boisson', ['boissonAModifier'=>$boisson[0]]);
     }
 
     public function update($id)
@@ -98,6 +98,12 @@ class BoissonController extends Controller
 
         return redirect('/Liste_boissons');
 
+    }
+
+    public function supprime($id) {
+
+        $boisson = Boisson::where('id',$id)->get();
+        return view('boissons.supprimer-boisson', ['boissonASupprimer'=>$boisson[0]]);
     }
 
     public function destroy($id)

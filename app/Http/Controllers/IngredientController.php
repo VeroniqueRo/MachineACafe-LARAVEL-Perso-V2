@@ -66,7 +66,7 @@ class IngredientController extends Controller
 			
 			$ingredients = Ingredient::where('id',$id)->get();
 
-			return view('ingredients.detail-ingredients', ['ingredients'=>$ingredients[0]]);
+			return view('ingredients.detail-ingredient', ['ingredients'=>$ingredients[0]]);
 
 	}
 
@@ -74,7 +74,7 @@ class IngredientController extends Controller
 
 	public function create() {
 
-			return view('ingredients.ajout-ingredients');
+			return view('ingredients.ajout-ingredient');
 	}
 
 	public function store(Request $request)
@@ -92,7 +92,7 @@ class IngredientController extends Controller
 	public function edit($id) {
 
 			$ingredient = Ingredient::where('id',$id)->get();
-			return view('ingredients.modifier-ingredients', ['ingredientAModifier'=>$ingredient[0]]);
+			return view('ingredients.modifier-ingredient', ['ingredientAModifier'=>$ingredient[0]]);
 	}
 
 	public function update(Request $request, $id)
@@ -108,6 +108,12 @@ class IngredientController extends Controller
 			return redirect('/Liste_ingredients');
 
 	}
+
+	public function supprime($id) {
+
+        $ingredient = Ingredient::where('id',$id)->get();
+        return view('ingredients.supprimer-ingredient', ['ingredientASupprimer'=>$ingredient[0]]);
+    }
 
 	public function destroy($id)
 

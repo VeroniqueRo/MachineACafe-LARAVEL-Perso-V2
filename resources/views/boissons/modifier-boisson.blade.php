@@ -7,8 +7,11 @@
 @section('content')
 
   <div class="container">
-      <form class="" action="{{route('modifBoissons', [$boissonAModifier->id])}}" method="post">
-          {{ csrf_field() }}
+      <form class="" action="{{route('modifBoisson', [$boissonAModifier->id])}}" method="post">
+          {{ csrf_field() }} {{-- Protection contre les attaques d'injection SQL--}}
+          {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_token" value="clé de sécurité">--}}
+          {{ method_field('PUT') }} 
+          {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_method" value="PUT">--}}
           <div class="form-group">
             <label for="codeboisson">Code</label>
             <input type="text" class="form-control" value="{{$boissonAModifier->code}}" name="newcode" placeholder="entrer le nouveau code de la boisson">

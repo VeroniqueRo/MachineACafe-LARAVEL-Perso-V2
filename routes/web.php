@@ -22,7 +22,7 @@ Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 // ROUTES POUR LA GESTION DES BOISSONS
 /////////////////////////////////////////////////////////////////////////////////////
 
-    Route::get('/Liste_boissons','BoissonController@afficheBoissons')->name('listeBoissons');
+    Route::get('/Liste_boissons','BoissonController@index')->name('listeBoissons');
 
     // Routes pour les tris du tableau des boissons
 
@@ -38,21 +38,24 @@ Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 
     Route::get('/boissons/ajouter-boisson','BoissonController@create')->name('formAjoutBoisson');
 
-    Route::post('/boissons/liste_des_boissons','BoissonController@store')->name('ajoutBoissons');
+    Route::post('/boissons/liste_des_boissons','BoissonController@store')->name('ajoutBoisson');
 
     // Routes du formulaire de modification d'une boisson
 
-    Route::get('/modif_boissons/{id}','BoissonController@edit')->name('formModifBoissons');
+    Route::get('/modif_boisson/{id}','BoissonController@edit')->name('formModifBoisson');
 
-    Route::post('/Liste_boissons/{id}','BoissonController@update')->name('modifBoissons');
+    Route::put('/Liste_boissons/{id}','BoissonController@update')->name('modifBoisson');
 
     // Routes pour supprimer une boisson
 
-    Route::get('/Liste_boissons/{id}','BoissonController@destroy')->name('deleteBoissons');
+    Route::get('/supprime_boisson/{id}','BoissonController@supprime')->name('formDeleteBoisson');
+
+    Route::delete('/Liste_boissons/{id}','BoissonController@destroy')->name('deleteBoisson');
+
 
     // Routes vers la fiche d'une boisson
 
-    Route::get('/boissons/{id}','BoissonController@detailsBoissons');
+    Route::get('/boissons/{id}','BoissonController@detailsBoisson');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES INGREDIENTS
@@ -80,17 +83,19 @@ Route::get('/gestionMonnaie','GestionMonnaieController@listMonnaie');
 
     // Routes du formulaire de modification d'un ingredient
 
-    Route::get('/modif_ingredients/{id}','IngredientController@edit')->name('formModifIngredients');
+    Route::get('/modif_ingredient/{id}','IngredientController@edit')->name('formModifIngredient');
 
-    Route::post('/Liste_ingredients/{id}','IngredientController@update')->name('modifIngredients');
+    Route::put('/Liste_ingredients/{id}','IngredientController@update')->name('modifIngredient');
 
     // Routes pour supprimer un ingredient
 
-    Route::get('/Liste_ingredients/{id}','IngredientController@destroy')->name('deleteIngredients');
+    Route::get('/supprime_ingredient/{id}','IngredientController@supprime')->name('formDeleteIngredient');
+
+    Route::delete('/Liste_ingredients/{id}','IngredientController@destroy')->name('deleteIngredient');
 
     // Routes vers la fiche d'un ingredient
 
-    Route::get('/ingredients/{id}','IngredientController@detailsIngredients');
+    Route::get('/ingredients/{id}','IngredientController@detailsIngredient');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES RECETTES

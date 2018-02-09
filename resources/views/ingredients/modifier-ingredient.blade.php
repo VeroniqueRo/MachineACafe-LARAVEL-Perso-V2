@@ -7,8 +7,9 @@
 @section('content')
 
   <div class="container">
-      <form class="" action="{{route('modifIngredients', [$ingredientAModifier->id])}}" method="post">
+      <form class="" action="{{route('modifIngredient', [$ingredientAModifier->id])}}" method="post">
           {{ csrf_field() }}
+          {{ method_field('PUT') }} 
           <div class="form-group">
               <label for="nomingredient" name="nomingredient">Nom de l'ingredient</label>
               <input type="text" class="form-control" value="{{$ingredientAModifier->nom}}" name="newnom" placeholder="entrer le nouveau nom de l'ingredient">

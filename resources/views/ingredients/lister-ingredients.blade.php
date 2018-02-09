@@ -21,8 +21,8 @@
                 @foreach($ingredients as $ingredient)
                 <td>{{$ingredient->nom}}</td>
                 <td>{{$ingredient->stock}}</td>
-                <td><a href="{{ route('formModifIngredients',[$ingredient->id])}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
-                <td><a href="{{ route('deleteIngredients',[$ingredient->id])}}"><button type="button" class="btn btn-danger">Effacer</button></a></td>
+                <td><a href="{{ route('formModifIngredient',[$ingredient->id])}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
+                <td><a href="{{ route('formDeleteIngredient',[$ingredient->id])}}"><button type="button" class="btn btn-danger">Effacer</button></a></td>
             </tr>
             @endforeach
         </table>        
