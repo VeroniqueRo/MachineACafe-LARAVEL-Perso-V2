@@ -20,13 +20,13 @@
                     <td>Date de la vente</td>
                 </tr>
                 @foreach($ventes as $vente)
-                <td>{{$vente->id}}</td>
-                <td>{{$vente->boisson->nom}}</td>
-                <td>{{$vente->nbSucres}}</td>
-                <td>{{$vente->boisson->prix}} cts</td>
-                <td>{{$vente->created_at}}</td>
-                </tr>
-            @endforeach
+                    <td>{{$vente->id}}</td>
+                    <td>{{$vente->boisson->nom}}</td>
+                    <td>{{$vente->nbSucres}}</td>
+                    <td>{{$vente->boisson->prix}} cts</td>
+                    <td>{{$vente->created_at}}</td>
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>    

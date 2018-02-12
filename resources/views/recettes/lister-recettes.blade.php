@@ -18,15 +18,20 @@
                 <td><b>dose</b></td>
                 <td colspan=2><b>Gestion</b></td>
             </tr>
-            {{--  <tr>  
-                @foreach($recettes as $recette)
-				<td>{{$recette->nomBoisson}}</td>
-				<td>{{$recette->nomIngredient}}</td>
-                <td>{{$recette->dose}}</td>
+            <tr>  
+                @foreach ($boissons as $boisson)
+                @foreach($boisson->ingredients as $ingredient)
+                <tr>
+                    <td>{{$boisson->nom}}</td>
+                    <td>{{$ingredient->nomIngredient}}</td>
+                    <td>{{$ingredient->pivot->nbDose}}</td>
+                </tr> 
+                    @endforeach 
+                @endforeach 
                 <td><button type="button" class="btn btn-warning">Modifier</button></a></td>
                 <td><button type="button" class="btn btn-danger">Effacer</button></a></td>
             </tr>
-            @endforeach  --}}
+            @endforeach
         </table>        
         <a href="/recettes/ajouter-recette"><button type="button" class="btn btn-success">Ajouter une recette</button></a>
     </div>

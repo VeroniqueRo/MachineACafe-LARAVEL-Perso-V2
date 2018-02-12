@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Recette;// lien vers la classe recette
+use App\Boisson;// lien vers la classe boisson
+use App\Ingredient;// lien vers la classe boisson
 
 class RecetteController extends Controller
 {
     // Méthode pour lister les recettes
     public function index() {
         
-        $recettes = Recette::all();// Appelle la classe pour ajouter toutes les données
-        return view('recettes.lister-recettes', ['recettes'=>$recettes]);
+        //Récupèrer les ingrédients d'une boisson
+        $boissons= Boisson::all()->load('ingredients');
+
+        //Retourner la vue avec les données 
+        return view('recettes.lister-recettes', ['boissons'=> $boissons]);
     
     }
 
