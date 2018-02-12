@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Boisson;// lien vers la classe Boisson
 
 class machineACafeController extends Controller
 {
     
-    function listDrink() {
-        // Méthode d'appel à la BDD sans ORM
-        // $drinkChoice = DB::select('select nomboisson, codeboisson  from boisson');
-        // Méthode d'appel à la BDD avec ORM
-        $drinkChoice = Boisson::all();
-
-        return view('machineACafe', ['drinks' => $drinkChoice]);
-
+    // Affiche les boissons proposées en fonction de la BDD
+    public function index() {
+        
+        $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
+        return view('machineACafe', ['boissons'=>$boissons]);
+    
     }
+
 }
 
 ?>

@@ -11,7 +11,7 @@ class VenteController extends Controller
     // Méthode pour lister les ventes
     public function index() {
         
-        $ventes = Vente::all();// Appelle la classe pour ajouter toutes les données
+        $ventes = Vente::all();// Appelle la classe pour ajouter toutes les données de la table vente
         return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
     }
@@ -60,19 +60,19 @@ class VenteController extends Controller
     // }
 
     // Fonctions d'ajout d'une vente
-    // public function store(Request $request)
+   
+    public function store(Request $request)
 
-    // {
-    //     $newVente = new Vente();
-    //     //récupère dans le model Boisson un tableau avec la liste des boissons. [0]:position 0 du tableau
-    //     $boisson = Boisson::whereNom(request('8'))->get()[0];
-    //     $newVente->boisson_id = $boisson->id;
-    //     $newVente->nbSucre = request('5');
+    {
+        $newVente = new Vente();
         
-    //     $newVente->save();
-    //     return redirect('/Liste_ventes');
+        $newVente->boisson_id = request('inputBoisson');
+        $newVente->nbSucres = request('inputSucre');
+        
+        $newVente->save();
+        return redirect('/Liste_ventes');
 
-    // }
+    }
 
     
 

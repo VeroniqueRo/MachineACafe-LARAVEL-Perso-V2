@@ -13,7 +13,8 @@ class CreateVentesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ventes', function (Blueprint $table) {
+        Schema::create('ventes', function (Blueprint $table)
+        {
             $table->increments('id');
             $table->integer('nbSucres');
             $table->integer('boisson_id')->unsigned();

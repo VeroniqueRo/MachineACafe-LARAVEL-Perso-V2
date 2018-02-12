@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'IndexController@bienvenue');
 
-Route::get('/machineACafe','MachineACafeController@listDrink');
+/////////////////////////////////////////////////////////////////////////////////////
+// ROUTES DE L'INTERFACE CLIENT
+/////////////////////////////////////////////////////////////////////////////////////
 
-// Routes d'avant
+        Route::get('/', 'IndexController@bienvenue');
 
-
+        Route::get('/machineACafe','MachineACafeController@index')->name('MachineACafe');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES BOISSONS
@@ -110,6 +111,10 @@ Route::get('/machineACafe','MachineACafeController@listDrink');
 /////////////////////////////////////////////////////////////////////////////////////
 
         Route::get('/Liste_ventes','VenteController@index')->name('listeVentes');
+
+        // Route pour l'ajout d'une vente
+
+        Route::post('/machineACafe','VenteController@store')->name('ajoutVente');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DE LA MONNAIE
