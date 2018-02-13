@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @include('template.menu')
 </head>
 <body>
     <div id="app">
@@ -77,4 +79,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+<footer>
+        @include('template.footer')
+</footer>
 </html>
