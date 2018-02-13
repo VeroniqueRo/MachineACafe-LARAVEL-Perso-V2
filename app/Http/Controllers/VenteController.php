@@ -16,39 +16,50 @@ class VenteController extends Controller
     
     }
 
-    // // Méthode pour lister les ventes par ordre alphabéthique
-    // function triNomVentesAZ() {
+    // Méthode pour lister les ventes par ordre de numero de vente
+    function triVentesCroissant() {
         
-    //     $ventes = Vente::orderBy('ingredient')->get();// Ordonne par ordre alpha les ingredients de ventes
-
-    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+        $ventes = Vente::orderBy('id','ASC')->get();// Ordonne par ordre croissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
-    // }
+    }
 
-    // // Méthode pour lister les ventes par ordre alphabéthique
-    // function triNomVentesZA() {
+    function triVentesDecroissant() {
         
-    //     $ventes = Vente::orderBy('ingredient','DESC')->get();// Ordonne par ordre alpha inverse
-
-    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+        $ventes = Vente::orderBy('id','DESC')->get();// Ordonne par ordre décroissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
-    // }  
+    }
 
-    // // Méthode pour lister les ventes par ordre de dose
-    // function triDoseVentesCroissant() {
+    // Méthode pour lister les ventes par nb de sucres
+    function triNbSucresVentesCroissant() {
         
-    //     $ventes = Vente::orderBy('dose','ASC')->get();// Ordonne par ordre croissant de dose
-    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+        $ventes = Vente::orderBy('nbSucres','ASC')->get();// Ordonne par ordre croissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
-    // }
+    }
 
-    // // Méthode pour lister les ventes par ordre de dose
-    // function triDoseVentesDecroissant() {
+    function triNbSucresVentesDecroissant() {
         
-    //     $ventes = Vente::orderBy('dose','DESC')->get();// Ordonne par ordre décroissant de dose
-    //     return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+        $ventes = Vente::orderBy('nbSucres','DESC')->get();// Ordonne par ordre décroissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
     
-    // }
+    }
+
+    // Méthode pour lister les ventes par dates
+    function triDateVentesCroissant() {
+        
+        $ventes = Vente::orderBy('created_at','ASC')->get();// Ordonne par ordre croissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    }
+
+    function triDateVentesDecroissant() {
+        
+        $ventes = Vente::orderBy('created_at','DESC')->get();// Ordonne par ordre décroissant
+        return view('ventes.lister-ventes', ['ventes'=>$ventes]);
+    
+    }
 
     // // Méthode pour afficher le détail des ventes en suivant un lien
     // function detailsVente($id) {

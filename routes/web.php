@@ -106,15 +106,33 @@
 
         Route::get('/Liste_recettes','RecetteController@index')->name('listeRecettes');
 
+        // Route::get('/recettes/{id}','RecetteController@index');
+
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES VENTES
 /////////////////////////////////////////////////////////////////////////////////////
 
-        Route::get('/Liste_ventes','VenteController@index')->name('listeVentes');
-
         // Route pour l'ajout d'une vente
 
         Route::post('/machineACafe','VenteController@store')->name('ajoutVente');
+
+        // Route pour lister les ventes
+
+        Route::get('/Liste_ventes','VenteController@index')->name('listeVentes');
+
+        // Routes pour les tris du tableau des ventes
+
+        Route::get('/ventes-UP','VenteController@triVentesCroissant')->name('triUP-V');
+
+        Route::get('/ventes-DOWN','VenteController@triVentesDecroissant')->name('triDOWN-V');
+
+        Route::get('/trisucres-UP','VenteController@triNbSucresVentesCroissant')->name('triSucreCroissant-V');
+
+        Route::get('/trisucres-DOWN','VenteController@triNbSucresVentesDecroissant')->name('triSucreDecroissant-V');
+
+        Route::get('/date-UP','VenteController@triDateVentesCroissant')->name('triDateCroissant-V');
+
+        Route::get('/date-DOWN','VenteController@triDateVentesDecroissant')->name('triDateDecroissant-V');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DE LA MONNAIE

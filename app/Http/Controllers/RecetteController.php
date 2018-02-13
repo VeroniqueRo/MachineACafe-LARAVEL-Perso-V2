@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Boisson;// lien vers la classe boisson
-use App\Ingredient;// lien vers la classe boisson
 
 class RecetteController extends Controller
 {
