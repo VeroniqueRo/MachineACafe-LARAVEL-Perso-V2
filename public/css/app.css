@@ -17,12 +17,11 @@ html, body {
   margin: 0;
 }
 
-
-.flex-center {
+/* .flex-center {
   align-items: center;
   display: flex;
   justify-content: center;
-}
+} */
 
 .position-ref {
   position: relative;
@@ -53,29 +52,30 @@ html, body {
   text-transform: uppercase;
 }
 
-.m-b-md {
+/* .m-b-md {
   margin-bottom: 30px;
-}
+} */
 
-.titreBoisson{
+
+/* .titreBoisson{
   margin-top: 2em;
   text-align: center;
   font-size: 3em;
-}
+} */
 
 .choixBoisson{
   margin-left: 10em;
 }
 
-.menuTemplate {
-  background-color: black;
+/* .menuTemplate {
+  background-color:#dcdcdc;
   height: 2em;
   text-align: center;
-}
+} */
 
-.menuTemplate  a{
+/* .menuTemplate  a{
   color: white;
-}
+} */
 
 .imageCafe{
   height: auto;
@@ -85,7 +85,7 @@ html, body {
 }
 
 footer {
-  background-color: #DCDCDC;
+  background-color: #dcdcdc;
   bottom: 0px;
   margin-top: 100px;
   width: 100%;
@@ -151,21 +151,6 @@ a:hover,a:focus{
      background:rgba(0,0,0,.4);
      box-shadow:0 1px 0 rgba(255,255,255,.4);
 }
-
-/* a span{
-  position:absolute;
-  margin-top:-40px;
-  margin-left:-35px;
-  color:white;
-  background:rgba(0,0,0,.9);
-  padding:15px;
-  border-radius:3px;
-  box-shadow:0 0 2px rgba(0,0,0,.5);
-  transform:scale(0) rotate(-12deg);
-  transition:all .25s;
-  opacity:0;
-  font-size: 1.4em;
-} */
 
 a:hover span, a:focus span{
      transform:scale(1) rotate(0);

@@ -9,7 +9,7 @@ class BoissonController extends Controller
 {
     // Méthode pour lister les boissons
     public function index() {
-        
+
         $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
         return view('boissons.lister-boissons', ['boissons'=>$boissons]);
     

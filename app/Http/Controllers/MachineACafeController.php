@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 // use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Boisson;// lien vers la classe Boisson
