@@ -1,5 +1,4 @@
 @extends('template.template')
-
 @section('titre')
 {{$ingredientASupprimer->nom}}
 @endsection

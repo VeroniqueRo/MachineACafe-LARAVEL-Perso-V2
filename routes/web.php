@@ -122,7 +122,7 @@
 
         // Route pour l'ajout d'une vente
 
-        Route::post('/machineACafe','VenteController@store')->name('ajoutVente')->middleware('auth');
+        Route::post('/machineACafe','VenteController@store')->name('ajoutVente');
 
         // Route pour lister les ventes
 

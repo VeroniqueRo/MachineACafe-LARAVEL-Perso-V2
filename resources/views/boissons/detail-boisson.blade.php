@@ -1,5 +1,4 @@
-@extends('template.template')
-      
+@extends('template.template')        
 @section('titre')
     Fiche "{{$boisson->nom}}"
 @endsection

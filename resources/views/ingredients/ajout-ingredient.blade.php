@@ -1,5 +1,4 @@
-@extends('template.template')
-
+@extends('template.template')  
 @section('titre')
   Ajouter un ingrédient
 @endsection

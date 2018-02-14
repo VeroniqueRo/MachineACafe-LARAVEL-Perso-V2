@@ -15,10 +15,10 @@
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 
     </head>
-    <body>
         <header>
             @include('template.menu')
         </header>
+    <body>
         <section>
             <div class="content">
                 <div class="title m-b-md">
@@ -31,5 +31,6 @@
         <footer>
             @include('template.footer')
         </footer>
+        
     </body>
 </html>

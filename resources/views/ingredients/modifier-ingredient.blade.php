@@ -1,5 +1,7 @@
 @extends('template.template')
-
+<header>
+    @include('template.menu')
+</header>  
 @section('titre')
   Modifier {{$ingredientAModifier->nom}}
 @endsection

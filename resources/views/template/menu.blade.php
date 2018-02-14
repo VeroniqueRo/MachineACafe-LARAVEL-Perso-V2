@@ -1,32 +1,24 @@
 <div class="menuTemplate">
   <div class="links">
+  
       <a href="../">Home</a>
       <a href="{{ url('/machineACafe')}}">Machine à Café</a>
-      <a href="{{ route('listeBoissons')}}">Boissons</a>
-      <a href="{{ route('listeIngredients')}}">Ingrédients</a>
-      <a href="{{ route('listeRecettes')}}">Recettes</a>
-      <a href="{{ route('listeVentes')}}">Ventes</a>
-      <a href="{{ url('/gestionMonnaie')}}">Gestion Monnaie</a>
+    @if (Route::has('login'))
+      @auth
+        <a href="{{ route('listeBoissons')}}">Boissons</a>
+        <a href="{{ route('listeIngredients')}}">Ingrédients</a>
+        <a href="{{ route('listeRecettes')}}">Recettes</a>
+        <a href="{{ route('listeVentes')}}">Ventes</a>
+        <a href="{{ url('/gestionMonnaie')}}">Gestion Monnaie</a>
+        <a href="{{ url('/home')}}">Bonjour {{ Auth::user()->name }}</a>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+        </form>
+      @else
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
+      @endauth
+    @endif
   </div>
 </div>
-{{--  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a id="nav-brand" class="navbar-brand" href="../index">La Pause s'Impose</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-          <li class="active"><a href="../index">Home</a></li>
-          <li><a href="../machineACafe">Machine a café</a></li>
-          <li><a href="../recettes">Liste des Recettes</a></li>
-          <li><a href="../ingredients">Liste des Ingrédients</a></li>
-          <li><a href="../ventes">Liste des Ventes</a></li>
-          <li><a href="../gestionMonnaie">Gestion Monnaie</a></li>
-      </ul>
-  </div>
-</nav>  --}}

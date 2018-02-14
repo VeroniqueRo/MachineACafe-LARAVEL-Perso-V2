@@ -81,7 +81,7 @@ class VenteController extends Controller
         $newVente->nbSucres = request('inputSucre');
         
         $newVente->save();
-        return redirect('/Liste_ventes');
+        return redirect('/machineACafe');
 
     }
 
