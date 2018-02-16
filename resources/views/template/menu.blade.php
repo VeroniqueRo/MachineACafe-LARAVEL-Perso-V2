@@ -9,8 +9,7 @@
             <span class="icon-bar"></span>
         </button>
         <!-- Branding image -->
-        <a class="navbar-brand" href="{{ url('/') }}">La Pause S'Impose</a>
-      </div>
+        <img width="50em" height="50em" src="../img/coffee.png"><a class="navbar-brand" href="{{ url('/') }}"> La Pause S'Impose</a>      </div>
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
         <ul class="nav navbar-nav navbar-left">
