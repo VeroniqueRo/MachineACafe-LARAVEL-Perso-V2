@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">  
       <div class="navbar-header">
         <!-- Collapsed Hamburger -->
@@ -13,8 +13,8 @@
       </div>
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
-        <ul class="nav navbar-nav">
-            <li><a href="../">Home</a></li>
+        <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="../">Home</a></li>
             <li><a href="{{ url('/machineACafe')}}">Machine à Café</a></li>
             @if (Illuminate\Support\Facades\Auth::check())
                 {{--  @if (Illuminate\Support\Facades\Auth::user()->role=== 'admin')  --}}
@@ -22,7 +22,6 @@
                 <li><a href="{{ route('listeIngredients')}}">Ingrédients</a></li>
                 <li><a href="{{ route('listeRecettes')}}">Recettes</a></li>
                 <li><a href="{{ url('/gestionMonnaie')}}">Gestion Monnaie</a></li>
-                <li><a href="{{ url('/home')}}">Bonjour {{ Auth::user()->name }}</a></li>
                 {{--  @endif  --}}
                 <li><a href="{{ route('listeVentes')}}">Ventes</a></li>
             @endif
@@ -33,13 +32,13 @@
           <ul class="nav navbar-nav navbar-right">
               <!-- Authentication Links -->
               @guest
-                <li><a href="{{ route('login') }}"> <i class="fa fa-user"></i> Login</a></li>
-                <li><a href="{{ route('register') }}">Register</a></li>
+                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> Enregistrez-vous</a></li>
               @else
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                       aria-expanded="false" aria-haspopup="true">
-                      {{ Auth::user()->name }} <span class="caret"></span>
+                      Bonjour {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
                       <li>
