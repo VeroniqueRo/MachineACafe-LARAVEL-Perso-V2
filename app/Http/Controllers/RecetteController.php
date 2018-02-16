@@ -52,33 +52,22 @@ class RecetteController extends Controller
     
     // }
 
-    // // Méthode pour afficher le détail des recettes en suivant un lien
-    // function detailsRecette($id) {
-        
-    //     $recettes = Recette::where('id',$id)->get();
+    // Fonctions d'ajout d'une recette
+    public function create() {
 
-    //     return view('recettes.detail-recette', ['recette'=>$recettes[0]]);
-    
-    // }
+        return view('boissons.detail-boisson');
+    }
 
-    // // Fonctions d'ajout d'une recette
-    // public function create() {
+    public function store(Request $request, Boisson $boisson)
 
-    //     return view('recettes.ajout-recette');
-    // }
+    {
+        $Ingredient = Ingredient::find($request->nomIngredient);
+        $Dose = $request->dose;
+        $boisson->ingredients()->attach($Ingredient, ['Dose' => $Dose]);
+       
+        return redirect()->back();
 
-    // public function store(Request $request)
-
-    // {
-    //     $newRecette = new Recette();
-    //     $newRecette->nom = $request->nomrecette; // $request->input('coderecette');
-    //     $newRecette->ingredient = $request->ingredientrecette;
-    //     $newRecette->dose = $request->doserecette;// l'attribut de l'objet recette prend la valeur entrée dans le formulaire
-        
-    //     $newRecette->save();
-    //     return redirect('/Liste_recettes');
-
-    // }
+    }
 
     // // Fonctions de modification d'une recette
     // public function edit($id) {

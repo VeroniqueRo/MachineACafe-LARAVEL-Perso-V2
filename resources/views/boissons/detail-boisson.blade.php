@@ -17,12 +17,15 @@
         </tr>
         </thead>
         <tbody>
+                     
+            
         <tr>
             <td>{{$boisson->id}}</td>
             <td>{{$boisson->code}}</td>
             <td>{{$boisson->nom}}</td>
             <td>{{$boisson->prix}}</td>
         </tr>
+      
         <tr>
             <td colspan=4><a href="{{ route('listeBoissons')}}">
             <button type="button" class="btn btn-success">Retour à la liste</button>
@@ -30,5 +33,49 @@
         </tr>
         </tbody>
     </table>
+    <h2>Détails de la recette</h2>
+    <p>Options de la BDD</p>      
+    <table class = "table table-hover table-bordered">
+        <tr class="active">  
+            <td><b>Id ingrédient</b></td>
+            <td><b>Ingrédient</b></td>
+            <td><b>dose</b></td>
+        </tr>
+        <tr>  
+        {{-- @foreach ($boissonsingredient as $boissoningredient)
+            @foreach($boissoningredient->ingredients as $ingredient)
+            <tr>
+                <td>{{$boissoningredient->nom}}</td>
+                <td>{{$ingredient->nom}}</td>
+                <td>{{$ingredient->pivot->nbDose}}</td>
+            </tr> 
+            @endforeach 
+        </tr>
+        @endforeach --}}
+    </table>
+    <form class="form-inline" action="" method="get">
+        {{ csrf_field() }}
+        <div class="form-group ">
+            <label>Ingrédient</label>
+            <div class="form-group" margin-top:"10px" >
+            <label class="col-md "></label>
+                <div class="col-md-6" >
+                    <select class="input-lg" name="nomIngredient" class="form-control">
+                   
+                    <option value=""></option>
+                     
+                   
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb-2">
+            <label>Dose</label>
+            <input type="text" class="form-control" name="dose" placeholder="entrer la dose d'ingrédient">
+        </div>
+        {{-- <a href="{{ route('ajoutRecette')}}"> --}}
+            <button type="submit" class="btn btn-primary">Ajouter la recette</button>
+    </form>
+
 </div>     
 @endsection

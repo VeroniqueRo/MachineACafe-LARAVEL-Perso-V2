@@ -66,7 +66,7 @@
 
     // Routes vers la fiche d'une boisson
 
-        Route::get('/boissons/{id}','BoissonController@detailsBoisson')->middleware('auth');
+        Route::get('/boissons/{id}','BoissonController@detailsBoisson')->middleware('auth');       
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES INGREDIENTS
@@ -113,6 +113,12 @@
 /////////////////////////////////////////////////////////////////////////////////////
 
         Route::get('/Liste_recettes','RecetteController@index')->name('listeRecettes')->middleware('auth');
+
+        // Routes du formulaire d'ajout d'une recette
+
+        Route::get('/recettes/{id}','RecetteController@create')->name('ajoutRecette')->middleware('auth');
+
+        Route::post('/Liste_recettes/{id}','RecetteController@store')->name('ListeRecettes')->middleware('auth');
 
         // Route::get('/recettes/{id}','RecetteController@index');
 
