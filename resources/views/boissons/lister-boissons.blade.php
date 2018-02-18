@@ -23,7 +23,7 @@
                 <td>{{$boisson->prix}} cts</td>
                 <td><a href="/boissons/{{$boisson->id}}">Détail</a></td>
                 <td><a href="{{ route('formModifBoisson',[$boisson->id])}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
-                <td><a href="{{ route('formDeleteBoisson',[$boisson->id])}}"><button type="button" class="btn btn-danger">Effacer</button></a></td>
+                <td><a href="{{ route('formDeleteBoisson',[$boisson->id])}}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
             </tr>
             @endforeach
         </table>        

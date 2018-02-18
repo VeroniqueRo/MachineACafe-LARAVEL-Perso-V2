@@ -25,6 +25,7 @@
         </tr>
         </tbody>
     </table>
+    <br>
     <h2>Recette de la boisson {{$boisson->nom}}</h2>
     <p>Gestion des stocks</p>      
     <table class = "table table-hover table-bordered">
@@ -54,36 +55,45 @@
             <td>{{-- <a href="{{ route('ajoutRecette')}}"> --}}
             <button type="submit" class="btn btn-primary">Ajouter la recette</button>
             </a></td>
-            <td>{{-- <a href="{{ route('ajoutRecette')}}"> --}}
+            <td>{{-- <a href="{{ route('supprimeRecette')}}"> --}}
             <button type="submit" class="btn btn-danger">Supprimer</button>
             </a></td>
         </tr>
     </table>
-    <h2>Ajouter la recette</h2>
+    <br>
+    <table class = "table table-hover">
+        <tr><h2>Ajouter la recette</h2>
+        <p><i>Ingrédient + dose par ingrédient</i></p> 
+        </tr>
+        <tr>
+        <td><form class="form-inline" action="" method="get">
+            {{ csrf_field() }}
+            <div class="form-group ">
+                <label>Ingrédient</label>
+                <div class="form-group">
+                <label class="col-md "></label>
+                    <div class="col-md-6" >
+                        <select class="input-lg" name="inputIngredient" class="form-control">
+                            
+                            @foreach ($listeIngredients as $ingredient)
+                            <option value="{{$ingredient->nom}}">{{$ingredient->nom}}
+                            @endforeach
+                            </option>
 
-    <form class="form-inline" action="" method="get">
-        {{ csrf_field() }}
-        <div class="form-group ">
-            <label>Ingrédient</label>
-            <div class="form-group">
-            <label class="col-md "></label>
-                <div class="col-md-6" >
-                    <select class="input-lg" name="nomIngredient" class="form-control">
-                   
-                    <option value=""></option>
-                     
-                   
-                    </select>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group mb-2">
-            <label>Dose</label>
-            <input type="text" class="form-control" name="dose" placeholder="entrer la dose d'ingrédient">
-        </div>
-        
-            
-    </form>
+        </td>
+        <td>
+            <div class="form-group mb-2">
+                <label>Dose</label>
+                <input type="text" class="input-lg" class="form-control" name="dose" placeholder="dose nécessaire">
+            </div>
+        </td>
+        </form>
+        </tr>
+    </table>
 
 </div>     
 @endsection
