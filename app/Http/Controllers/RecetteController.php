@@ -58,16 +58,16 @@ class RecetteController extends Controller
         return view('boissons.detail-boisson');
     }
 
-    public function store(Request $request, Boisson $boisson)
+    public function store(Request $request, $id)
 
     {
-        $Ingredient = Ingredient::find($request->nomIngredient);
-        $Dose = $request->dose;
-        $boisson->ingredients()->attach($Ingredient, ['Dose' => $Dose]);
+        $boisson = Boisson::find($id);
+        $boisson->ingredients()->attach($request->ingredient, ['nbDose' => $request->dose]);
        
         return redirect()->back();
 
     }
+
 
     // // Fonctions de modification d'une recette
     // public function edit($id) {

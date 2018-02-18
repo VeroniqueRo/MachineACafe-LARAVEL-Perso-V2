@@ -116,9 +116,7 @@
 
         // Routes du formulaire d'ajout d'une recette
 
-        Route::get('/recettes/{id}','RecetteController@create')->name('ajoutRecette')->middleware('auth');
-
-        Route::post('/Liste_recettes/{id}','RecetteController@store')->name('ListeRecettes')->middleware('auth');
+        Route::post('/recettes/{id}','RecetteController@store')->name('ajoutRecette')->middleware('auth');
 
         // Route::get('/recettes/{id}','RecetteController@index');
 
