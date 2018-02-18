@@ -25,7 +25,8 @@
             </tr>
             @endforeach
         </table>        
-        <a href="/ingredients/ajouter-ingredient"><button type="button" class="btn btn-success">Ajouter un ingredient</button></a>
+        <a href="/ingredients/ajouter-ingredient"><button type="button" class="btn btn-primary">Ajouter un ingredient</button></a>
+        <a href="{{ route('listeBoissons')}}"><button type="button" class="btn btn-info">Retour à la liste des boissons</button></a>
     </div>
 </div>    
 @endsection

@@ -14,12 +14,12 @@
           {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_method" value="PUT">--}}
         <div>
             <h3>Voulez-vous vraiment supprimer<br>
-            {{$ingredientASupprimer->nom}} de la base de données ?</h3><br>
+            l'ingrédient {{$ingredientASupprimer->nom}} de la base de données ?</h3><br>
         </div>
-        <button type="submit" class="btn btn-danger">Supprimer de la BDD</button>
+        <button type="submit" class="btn btn-danger">Supprimer</button>
         <hr>
         <a href="{{ route('listeIngredients')}}">
-        <button type="button" class="btn btn-success">Annuler</button>
+        <button type="button" class="btn btn-info">Annuler</button>
         </a>
       </form>
   </div>

@@ -25,11 +25,11 @@
                         <label for="prixboisson" name="prixboisson">Prix</label>
                         <input type="text" class="form-control" value="{{$boissonAModifier->prix}}" name="newprix" placeholder="entrer le  nouveau prix de la boisson">
                     </div>
-                    <button type="submit" class="btn btn-danger">Modifier la BDD</button>
+                    <button type="submit" class="btn btn-warning">Modifier</button>
                 </form>
                 <tr>
                     <a href="{{ route('listeBoissons')}}">
-                    <button type="button" class="btn btn-success">Annuler</button>
+                    <button type="button" class="btn btn-info">Annuler</button>
                     </a>
                 </tr>
             </tbody>

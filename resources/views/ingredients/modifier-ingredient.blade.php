@@ -18,10 +18,10 @@
               <label for="stockingredient" name="stockingredient">Stock</label>
               <input type="text" class="form-control" value="{{$ingredientAModifier->stock}}" name="newstock" placeholder="entrer le  nouveau stock de l'ingredient">
           </div>
-          <button type="submit" class="btn btn-danger">Modifier la BDD</button>
+          <button type="submit" class="btn btn-warning">Modifier</button>
           <hr>
           <a href="{{ route('listeIngredients')}}">
-          <button type="button" class="btn btn-success">Annuler</button>
+          <button type="button" class="btn btn-info">Annuler</button>
           </a>
       </form>
   </div>

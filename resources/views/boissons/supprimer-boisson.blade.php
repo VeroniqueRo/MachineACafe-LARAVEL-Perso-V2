@@ -19,7 +19,7 @@
                 <button type="submit" class="btn btn-danger">Supprimer</button>
                 <hr>
                 <a href="{{ route('listeBoissons')}}">
-                <button type="button" class="btn btn-success">Annuler</button>
+                <button type="button" class="btn btn-info">Annuler</button>
                 </a>
             </div>
         </form>
