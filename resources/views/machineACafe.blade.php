@@ -1,8 +1,7 @@
 @extends('template.template')
 
 @section('content')
-<div class="container">
-<img class="imageCafetiere" alt="image tasse a café"  src="../img/mac-face.png" />
+<div id="machineACafe" class="container">
   <form action="{{route('ajoutVente')}}" method="post">
   {{ csrf_field() }}
     <!-- Selection de la boisson -->
@@ -17,7 +16,7 @@
         </select>
       </div>
     </div>
-    <br><br><hr>
+    <br><br><br><br>
     <!-- Choix du nombre de sucres -->
     <div class="form-group">
       <div class="col-md-12"> 
@@ -46,7 +45,7 @@
           5
         </label>
       </div>
-        <br><hr>
+      <br><br>
       <div>
         <button type="submit" class="btn btn-primary">Commander</button>
         <a href="{{ route('MachineACafe')}}">

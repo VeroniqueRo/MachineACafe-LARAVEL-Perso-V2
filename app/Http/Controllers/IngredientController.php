@@ -19,7 +19,6 @@ class IngredientController extends Controller
 	function triNomIngredientsAZ() {
         
 		$ingredients = Ingredient::orderBy('nom')->get();// Ordonne par ordre alpha les noms de ingredients
-
 		return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
 
 	}
@@ -27,34 +26,32 @@ class IngredientController extends Controller
 	// Méthode pour lister les ingredients par ordre alphabéthique avec le Model
 	function triNomIngredientsZA() {
 			
-			$ingredients = Ingredient::orderBy('nom','DESC')->get();// Ordonne par ordre alpha inverse
-
-			return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
+		$ingredients = Ingredient::orderBy('nom','DESC')->get();// Ordonne par ordre alpha inverse
+		return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
 
 	}  
 
 	// Méthode pour lister les ingredients par ordre de prix avec le Model
 	function triPrixIngredientsCroissant() {
 			
-			$ingredients = Ingredient::orderBy('stock','ASC')->get();// Ordonne par ordre croissant de prix
-			return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
+		$ingredients = Ingredient::orderBy('stock','ASC')->get();// Ordonne par ordre croissant de prix
+		return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
 
 	}
 
 	// Méthode pour lister les ingredients par ordre de prix avec le Model
 	function triPrixIngredientsDecroissant() {
 			
-			$ingredients = Ingredient::orderBy('stock','DESC')->get();// Ordonne par ordre décroissant de prix
-			return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
+		$ingredients = Ingredient::orderBy('stock','DESC')->get();// Ordonne par ordre décroissant de prix
+		return view('ingredients.lister-ingredients', ['ingredients'=>$ingredients]);
 
 	}
 
 	// // Méthode pour afficher le détail d'un ingredient en suivant un lien avec le Model
 	// function detailsIngredients($id) {
 			
-	// 		$ingredients = Ingredient::where('id',$id)->get();
-
-	// 		return view('ingredients.detail-ingredient', ['ingredient'=>$ingredients[0]]);
+// 		$ingredients = Ingredient::where('id',$id)->get();
+// 		return view('ingredients.detail-ingredient', ['ingredient'=>$ingredients[0]]);
 
 	// }
 

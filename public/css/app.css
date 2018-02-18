@@ -13,6 +13,7 @@
 
 
 html, body {
+  
   background-color: #fff;
   color: #636b6f;
   font-family: 'Raleway', sans-serif;
@@ -20,13 +21,15 @@ html, body {
   margin: 0;
 }
 
-.imageCafetiere {
-  position: absolute;
-  margin-left: -50%;
-  margin-right: 50%;
-  margin-top: -4%;
-  max-width:100%;
-  max-height: 100%;
+#login-header {
+  background: #dcdcdc;
+  color: black;
+}
+
+#machineACafe {
+  background: url("../img/mac-face.png") no-repeat center;
+  background-size: contain;
+  padding: 5% 7% 29% 0;
 }
 
 .selection {
@@ -35,12 +38,6 @@ html, body {
   margin-right: 100%;
   margin-top: 20%;
 }
-
-/* .flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-} */
 
 .position-ref {
   position: relative;
@@ -61,40 +58,9 @@ html, body {
   font-size: 7vw;
 }
 
-/* .links > a {
-  color: #636b6f;
-  padding: 0 5%;
-  font-size: 5%;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-} */
-
-/* .m-b-md {
-  margin-bottom: 30px;
-} */
-
-
-/* .titreBoisson{
-  margin-top: 2em;
-  text-align: center;
-  font-size: 3em;
-} */
-
 .choixBoisson{
   margin-left: 10em;
 }
-
-/* .menuTemplate {
-  background-color:#dcdcdc;
-  height: 2em;
-  text-align: center;
-} */
-
-/* .menuTemplate  a{
-  color: white;
-} */
 
 .imageCafe{
   max-width: 50%;

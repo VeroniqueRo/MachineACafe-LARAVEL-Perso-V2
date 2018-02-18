@@ -1,6 +1,6 @@
 @extends('template.template')        
 @section('titre')
-    Fiche "{{$boisson->nom}}"
+    Fiche {{$boisson->nom}}
 @endsection
 
 @section('content')
@@ -10,48 +10,45 @@
     <table class="table table-bordered .table-hover .table-responsive">
         <thead>
         <tr class="active">
-            <th>ID</th>
+            <th>Id</th>
             <th>Code</th>
             <th>Nom</th>
             <th>Prix</th>
         </tr>
         </thead>
         <tbody>
-                     
-            
         <tr>
             <td>{{$boisson->id}}</td>
             <td>{{$boisson->code}}</td>
             <td>{{$boisson->nom}}</td>
             <td>{{$boisson->prix}}</td>
         </tr>
-      
-        <tr>
-            <td colspan=4><a href="{{ route('listeBoissons')}}">
-            <button type="button" class="btn btn-success">Retour à la liste</button>
-            </a></td>
-        </tr>
         </tbody>
     </table>
-    <h2>Détails de la recette</h2>
+    <h2>Détails de la recette du {{$boisson->nom}}</h2>
     <p>Options de la BDD</p>      
     <table class = "table table-hover table-bordered">
         <tr class="active">  
             <td><b>Id ingrédient</b></td>
             <td><b>Ingrédient</b></td>
-            <td><b>dose</b></td>
+            <td><b>Dose</b></td>
+            <td><b>Stock</b></td>
         </tr>
         <tr>  
-        {{-- @foreach ($boissonsingredient as $boissoningredient)
-            @foreach($boissoningredient->ingredients as $ingredient)
+        @foreach ($ingredients as $ingredient)
             <tr>
-                <td>{{$boissoningredient->nom}}</td>
+                <td>{{$ingredient->id}}</td>
                 <td>{{$ingredient->nom}}</td>
                 <td>{{$ingredient->pivot->nbDose}}</td>
+                <td>{{$ingredient->stock}}</td>
             </tr> 
-            @endforeach 
         </tr>
-        @endforeach --}}
+        @endforeach
+        <tr>
+            <td colspan=4><a href="{{ route('listeBoissons')}}">
+            <button type="button" class="btn btn-success">Retour à la liste</button>
+            </a></td>
+        </tr>
     </table>
     <form class="form-inline" action="" method="get">
         {{ csrf_field() }}

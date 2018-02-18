@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
         <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="../">Home</a></li>
+            <li class="active"><a href="../">Accueil</a></li>
             <li><a href="{{ url('/machineACafe')}}">Machine à Café</a></li>
             @if (Illuminate\Support\Facades\Auth::check())
                 {{--  @if (Illuminate\Support\Facades\Auth::user()->role=== 'admin')  --}}
@@ -31,7 +31,7 @@
           <ul class="nav navbar-nav navbar-right">
               <!-- Authentication Links -->
               @guest
-                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
                 <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> Enregistrez-vous</a></li>
               @else
                 <li class="dropdown">

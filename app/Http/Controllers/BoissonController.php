@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Boisson;// lien vers la classe Boisson
+use App\Ingredient;
 
 class BoissonController extends Controller
 {
@@ -51,10 +52,12 @@ class BoissonController extends Controller
 
     // Méthode pour afficher le détail des boissons en suivant un lien
     function detailsBoisson($id) {
-        
-        $boissons = Boisson::where('id',$id)->get();
 
-        return view('boissons.detail-boisson', ['boisson'=>$boissons[0]]);
+        $boisson = Boisson::find($id);
+        $ingredients = $boisson->ingredients()->get();
+
+
+        return view('boissons.detail-boisson', ['boisson'=>$boisson, 'ingredients'=> $ingredients]);
     
     }
 
