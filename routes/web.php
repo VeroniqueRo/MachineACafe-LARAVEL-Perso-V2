@@ -112,13 +112,23 @@
 // ROUTES POUR LA GESTION DES RECETTES
 /////////////////////////////////////////////////////////////////////////////////////
 
-        Route::get('/Liste_recettes','RecetteController@index')->name('listeRecettes')->middleware('auth');
+        // Routes pour afficher toutes les recettes sur une page distincte de la boisson        
+
+        Route::get('/liste_recettes','RecetteController@index')->name('listeRecettes')->middleware('auth');
 
         // Routes du formulaire d'ajout d'une recette
 
         Route::post('/recettes/{id}','RecetteController@store')->name('ajoutRecette')->middleware('auth');
 
-        // Route::get('/recettes/{id}','RecetteController@index');
+        // Routes du formulaire de modification d'une recette
+
+        // Route::get('/modif_recettes/{id_boisson}/{id_ingredient}','RecetteController@edit')->name('formModifRecette')->middleware('auth');
+
+        // Route::put('/liste_recettes/{id_boisson}/{id_ingredient}','RecetteController@update')->name('modifRecette')->middleware('auth');
+
+        // Routes du formulaire de suppression d'une recette
+
+        Route::delete('/supprime_recettes/{id_boisson}/{id_ingredient}','RecetteController@destroy')->name('supprimeRecette')->middleware('auth');
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES VENTES

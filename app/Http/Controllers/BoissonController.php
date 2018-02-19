@@ -55,6 +55,7 @@ class BoissonController extends Controller
 
         $boisson = Boisson::find($id);
         $ingredients = $boisson->ingredients()->get();
+        // dump($ingredients);
         $allIngredients = Ingredient::all();
 
         return view('boissons.detail-boisson', ['boisson'=>$boisson, 'ingredients'=> $ingredients, 'listeIngredients'=>$allIngredients]);

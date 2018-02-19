@@ -39,6 +39,12 @@ html, body {
   margin-top: 20%;
 }
 
+.tableaux{
+  display:inline-block;
+  margin: 10%;
+  vertical-align:top;
+}
+
 .position-ref {
   position: relative;
 }

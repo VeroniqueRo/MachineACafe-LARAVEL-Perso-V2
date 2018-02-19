@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Boisson;// lien vers la classe boisson
+use App\Ingredient;
 
 class RecetteController extends Controller
 {
-    // Méthode pour lister les recettes
+    // Méthode pour lister les recettes dans une page recettes indépendante
     public function index() {
         
         //Récupèrer les ingrédients d'une boisson
         $boissons= Boisson::all()->load('ingredients');
-
         //Retourner la vue avec les données 
         return view('recettes.lister-recettes', ['boissons'=> $boissons]);
     
@@ -62,51 +62,44 @@ class RecetteController extends Controller
 
     {
         $boisson = Boisson::find($id);
-        $boisson->ingredients()->attach($request->ingredient, ['nbDose' => $request->dose]);
-       
-        return redirect()->back();
+        $ingredient = Ingredient::find($request->ingredient);
+        $boisson->ingredients()->attach($ingredient, ['nbDose' => $request->dose]);
+
+        return redirect()->back();// Retour à la page précédement utilisée
 
     }
 
-
     // // Fonctions de modification d'une recette
-    // public function edit($id) {
+    // public function edit($id_boisson, $id_ingredient) {
 
-    //     $recette = Recette::where('id',$id)->get();
-    //     return view('recettes.modifier-recette', ['recetteAModifier'=>$recette[0]]);
+    //     $boisson = Boisson::find($id_boisson);
+    //     $ingredient = Ingredient::find($id_ingredient);
+        
+    //     return view('recettes.modifier-recette', ['boisson'=>$boisson, 'ingredient'=>$ingredient ]);
     // }
 
     // public function update($id)
 
     // {
-    //     $modifRecette = Recette::find($id);
+    //     $boisson = Boisson::find($id);
+    //     $modifRecette = $boisson->ingredients()->updateExistingPivot($request->ingredient, $request->dose);
 
-    //     $modifRecette->code = request('newcode');
-    //     $modifRecette->ingredient = request('newingredient');
-    //     $modifRecette->dose = request('newdose');
+    //     return redirect()->back();
+
+    // }
+
+    public function destroy($id_boisson, $id_ingredient)
+
+    {
+        $boisson = Boisson::find($id_boisson);
+        $ingredient = Ingredient::find($id_ingredient);
+                
+        $boisson->ingredients()->detach($ingredient);
         
-    //     $modifRecette->save();
 
-    //     return redirect('/Liste_recettes');
+        return redirect()->back();
 
-    // }
-
-    // // Fonctions de supprimer d'une recette
-    // public function supprime($id) {
-
-    //     $recette = Recette::where('id',$id)->get();
-    //     return view('recettes.supprimer-recette', ['recetteASupprimer'=>$recette[0]]);
-    // }
-
-    // public function destroy($id)
-
-    // {
-    //     $deleteRecette = Recette::find($id);
-    //     $deleteRecette->delete();
-
-    //     return redirect('/Liste_recettes');
-
-    // }
+    }
 
 }
 ?>
