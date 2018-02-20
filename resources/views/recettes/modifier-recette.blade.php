@@ -1,30 +1,24 @@
 @extends('template.template') 
 @section('titre')
-  Modifier la recette de la boisson {{$ingredient->nom}}
+
+  {{$recette->nom}}
 @endsection
 
 @section('content')
 
   <div class="container">
-    <hr>
-    <form class="" action="{{route('modifRecette', [$ingredient->nbDose])}}" method="post">
+    <h3>Dose de l'ingrédient {{$recette->nom}} à modifier dans la recette du {{$boisson->nom}}</h3>
+    <form class="" action="{{route('modifRecette', [$boisson->id, $recette->id])}}" method="post">
           {{ csrf_field() }}
           {{ method_field('PUT') }}
+     
         <div class="form-group">
-            <label for="nomingredient" name="nomingredient">Id de l'ingredient</label>
-            <input type="text" class="form-control" value="{{$ingredient->id}}" name="newnom" placeholder="entrer le nouveau nom de l'ingredient">
-        </div>
-        <div class="form-group">
-            <label for="nomingredient" name="nomingredient">Nom de l'ingredient</label>
-            <input type="text" class="form-control" value="{{$ingredient->nom}}" name="newnom" placeholder="entrer le nouveau nom de l'ingredient">
-        </div>
-        <div class="form-group">
-            <label for="stockingredient" name="stockingredient">Stock</label>
-            <input type="text" class="form-control" value="{{$ingredient->stock}}" name="newstock" placeholder="entrer le  nouveau stock de l'ingredient">
+       
+            <input type="text" class="form-control" value="{{$recette->pivot->nbDose}}" name="nbDose" placeholder="entrer la nouvelle dose">
         </div>
         <button type="submit" class="btn btn-warning">Modifier</button>
         <hr>
-        <a href="">
+        <a href="{{route('ficheBoisson', $boisson->id)}}">
         <button type="button" class="btn btn-info">Annuler</button>
         </a>
       </form>

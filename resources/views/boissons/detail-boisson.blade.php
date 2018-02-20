@@ -41,15 +41,18 @@
             <td>{{$ingredient->id}}</td>
             <td>{{$ingredient->nom}}</td>
             <td>{{$ingredient->pivot->nbDose}}</td>
+            {{--  <td><form class="" action="{{route('modifRecette', [$boisson->id, $ingredient->id])}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('PUT') }}
+                <input type="text" class="form-control" value="{{$ingredient->pivot->nbDose}}" name="nbDose" placeholder="entrer la nouvelle dose">
+            </td></form>  --}}
             <td>{{$ingredient->stock}}</td>
-            {{-- <td><a href="{{ route('formModifRecette', [ $boisson->id, $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a></td> --}}
+            <td><a href="{{ route('formModifRecette', [ $boisson->id, $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a></td>
             <td><a href="{{ route('formModifIngredient', [ $ingredient->id ]) }}"><button type="button" class="btn btn-success">Modifier stock</button></a></td>
             <td>
                 <form class="" action="{{ route('supprimeRecette', [ $boisson->id, $ingredient->id ]) }}" method="post">
-                    {{ csrf_field() }} {{-- Protection contre les attaques d'injection SQL--}}
-                    {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_token" value="clé de sécurité">--}}
+                    {{ csrf_field() }} 
                     {{ method_field('DELETE') }} 
-                    {{--  Méthode LARAVEL Equivalante à <input type="hidden" name="_method" value="PUT">--}}
                     <a href=""><button type="submit" class="btn btn-danger">Supprimer l'ingrédient</button></a>
                 </form>
             </td>
@@ -84,7 +87,7 @@
         <button type="submit" class="btn btn-success">Ajouter la recette</button>
         
         <hr>
-        {{-- <a href="{{ route('formModifRecette', [ $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a> --}}
+            <a href="{{ route('formModifRecette', [ $boisson->id, $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a>
             <a href="{{ route('listeBoissons')}}">
             <button type="button" class="btn btn-info">Annuler</button>
             </a>

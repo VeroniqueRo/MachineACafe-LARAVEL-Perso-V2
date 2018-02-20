@@ -66,7 +66,7 @@
 
     // Routes vers la fiche d'une boisson
 
-        Route::get('/boissons/{id}','BoissonController@detailsBoisson')->middleware('auth');       
+        Route::get('/boissons/{id}','BoissonController@detailsBoisson')->name('ficheBoisson')->middleware('auth');       
 
 /////////////////////////////////////////////////////////////////////////////////////
 // ROUTES POUR LA GESTION DES INGREDIENTS
@@ -122,9 +122,9 @@
 
         // Routes du formulaire de modification d'une recette
 
-        // Route::get('/modif_recettes/{id_boisson}/{id_ingredient}','RecetteController@edit')->name('formModifRecette')->middleware('auth');
+        Route::get('/modif_recette/{id_boisson}/{id_ingredient}','RecetteController@edit')->name('formModifRecette')->middleware('auth');
 
-        // Route::put('/liste_recettes/{id_boisson}/{id_ingredient}','RecetteController@update')->name('modifRecette')->middleware('auth');
+        Route::put('/liste_recettes/{id_boisson}/{id_ingredient}','RecetteController@update')->name('modifRecette')->middleware('auth');
 
         // Routes du formulaire de suppression d'une recette
 

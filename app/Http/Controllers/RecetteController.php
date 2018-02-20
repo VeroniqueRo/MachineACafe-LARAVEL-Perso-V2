@@ -69,24 +69,26 @@ class RecetteController extends Controller
 
     }
 
-    // // Fonctions de modification d'une recette
-    // public function edit($id_boisson, $id_ingredient) {
+    // Fonctions de modification d'une recette
+    public function edit($id_boisson, $id_ingredient) {
 
-    //     $boisson = Boisson::find($id_boisson);
-    //     $ingredient = Ingredient::find($id_ingredient);
-        
-    //     return view('recettes.modifier-recette', ['boisson'=>$boisson, 'ingredient'=>$ingredient ]);
-    // }
+        $boisson = Boisson::find($id_boisson);
+        // $ingredient = Ingredient::find($id_ingredient);
+        $recette = $boisson->ingredients->find($id_ingredient);
+        // return view('recettes.modifier-recette', ['boisson'=>$boisson, 'ingredient'=>$ingredient ]);
+        return view('recettes.modifier-recette', ['boisson'=>$boisson], ['recette'=>$recette]);
+    }
 
-    // public function update($id)
+    public function update(Request $request, $id_boisson,$id_ingredient)
 
-    // {
-    //     $boisson = Boisson::find($id);
-    //     $modifRecette = $boisson->ingredients()->updateExistingPivot($request->ingredient, $request->dose);
+    {
+        $boisson = Boisson::find($id_boisson);
+        $recette = $boisson->ingredients->find($id_ingredient);
+        $recette->pivot->update(["nbDose"=>$request->input("nbDose")]);
 
-    //     return redirect()->back();
+        return redirect('/boissons/'.$boisson->id);
 
-    // }
+    }
 
     public function destroy($id_boisson, $id_ingredient)
 
@@ -95,7 +97,6 @@ class RecetteController extends Controller
         $ingredient = Ingredient::find($id_ingredient);
                 
         $boisson->ingredients()->detach($ingredient);
-        
 
         return redirect()->back();
 

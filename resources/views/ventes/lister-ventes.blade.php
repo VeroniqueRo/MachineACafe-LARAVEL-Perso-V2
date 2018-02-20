@@ -23,6 +23,7 @@
                         <a href="{{ route('triDateDecroissant-V')}}"><button type="button" class="btn btn-light">DOWN</button></a></td>
                 </tr>
                 @foreach($ventes as $vente)
+               
                     <td>{{$vente->id}}</td>
                     <td>{{$vente->boisson->nom}}</td>
                     <td>{{$vente->nbSucres}}</td>
