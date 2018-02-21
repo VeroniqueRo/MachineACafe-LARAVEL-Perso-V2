@@ -25,9 +25,9 @@
                 @foreach($ventes as $vente)
                
                     <td>{{$vente->id}}</td>
-                    <td>{{$vente->boisson->nom}}</td>
+                    <td>@if($vente->boisson !== null) {{$vente->boisson->nom}}@endif</td>
                     <td>{{$vente->nbSucres}}</td>
-                    <td>{{$vente->boisson->prix}} cts</td>
+                    <td>@if($vente->boisson !== null) {{$vente->boisson->prix}} cts @else boisson obsolète @endif</td>
                     <td>{{$vente->created_at}}</td>
                     </tr>
                 @endforeach

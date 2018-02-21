@@ -1,0 +1,192 @@
+#machine{
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    width: 768px;
+    height: 1024px;
+    margin: auto;
+    position: relative;
+}
+
+#ecran{
+    background-image: url('../img/ecran_total.png');
+    background-repeat: no-repeat;
+    width: 544px;
+    height: 491px;
+    position: relative;
+    left: 50px;
+    top: 79px;
+}
+
+#afficheur {
+    background-image: url('../img/ecranLCD.png');
+    background-repeat: no-repeat;
+    width: 485px;
+    height: 113px;
+    position: relative;
+    left: 29px;
+    top: 25px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+
+}
+
+#btnCafe {
+    position: absolute;
+    top: 150px;
+    left: 26px;
+}
+
+#btnChocolat {
+    position: absolute;
+    top: 150px;
+    left: 278px;
+}
+
+#btnCappuccino {
+    position: absolute;
+    top: 258px;
+    left: 26px;
+}
+
+#btnThe{
+    position: absolute;
+    top: 258px;
+    left: 278px;
+}
+
+#imgSucre {
+    position: absolute;
+    top: 401px;
+    left: 44px;
+}
+
+#btnMoinsSucre {
+    position: absolute;
+    top: 391px;
+    left: 130px;
+}
+
+#btnPlusSucre {
+    position: absolute;
+    top: 391px;
+    left: 349px;
+}
+
+#sucres{
+    position: absolute;
+    top: 401px;
+    left: 205px;
+}
+#btnPay {
+    position: absolute;
+    top: 227px;
+    left: 617px;
+}
+#btnCancel {
+    position: absolute;
+    top: 344px;
+    left: 617px;
+}
+#btnMaintenance {
+    position: absolute;
+    top: 460px;
+    left: 617px;
+}
+#fente {
+    position: absolute;
+    top: 79px;
+    left: 650px;
+}
+#renduMonnaie {
+    position: absolute;
+    top: 759px;
+    left: 530px;
+}
+
+#pieces {
+    position: absolute;
+    top: 20px;
+    left: 170px;
+}
+
+.boissonSucre {
+    background-image: url("../img/Images-gobelet/Sucre.png");
+    background-repeat: no-repeat;
+}
+
+.boissonThe {
+    background-image: url("../img/Images-gobelet/The.png");
+    background-repeat: no-repeat;
+}
+
+.boissonCafe {
+    background-image: url("../img/Images-gobelet/Cafe.png");
+    background-repeat: no-repeat;
+}
+
+.boissonCappuccino {
+    background-image: url("../img/Images-gobelet/Cappuccino.png");
+    background-repeat: no-repeat;
+}
+
+.boissonChocolat {
+    background-image: url("../img/Images-gobelet/Chocolat.png");
+    background-repeat: no-repeat;
+}
+
+.touillette {
+    background-image: url("../img/Images-gobelet/touillette.png");
+    background-repeat: no-repeat;
+}
+
+.gobeletBack {
+    background-image: url("../img/Images-gobelet/GobeletFond.png");
+    background-repeat: no-repeat;
+}
+
+.gobeletFront {
+    background-image: url("../img/Images-gobelet/GobeletFace.png");
+    background-repeat: no-repeat;
+}
+
+.gobeletElement {
+    width: 239px;
+    height: 300px
+}
+
+#gobeletFond {
+    position: absolute;
+    z-index: 0;
+}
+
+#touillette {
+    position: absolute;
+    top: 30px;
+    left: 140px;
+    z-index: 1;
+}
+#boisson {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    z-index: 2;
+}
+
+#sucre {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    z-index: 3;
+}
+
+#gobeletFace {
+    position: absolute;
+    z-index: 4;
+}
+
+#gobeletConstruit {
+    position: absolute;
+    top: 665px;
+    left: 115px;
+}

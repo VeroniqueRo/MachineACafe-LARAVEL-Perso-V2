@@ -15,6 +15,8 @@ class machineACafeController extends Controller
         
         $boissons = Boisson::all();// Appelle la classe pour ajouter toutes les données
         return view('machineACafe', ['boissons'=>$boissons]);
+
+       
     
     }
 
