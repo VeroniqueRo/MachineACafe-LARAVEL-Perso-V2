@@ -22,7 +22,7 @@
 
     </div>
       <div>
-        <img id="fente" src="../img/fente_Monnayeur.png">
+        <img id="fente" src="../img/Fente_Monnayeur.png">
         <img type="submit" id="btnPay" src="../img/pay_off.png">
         <a href="{{ route('MachineACafe')}}"><img id="btnCancel" src="../img/cancel_off.png"></a>
         <img id="btnMaintenance" src="../img/maintenance_off.png">
