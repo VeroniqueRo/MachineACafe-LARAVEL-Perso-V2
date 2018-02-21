@@ -25,9 +25,9 @@
             </tr>
             @endforeach
         </table>        
-        <a href="/recettes/ajouter-recette"><button type="button" class="btn btn-success">Ajouter une recette</button></a>
+        {{--  <a href="/recettes/ajouter-recette"><button type="button" class="btn btn-success">Ajouter une recette</button></a>
         <td><button type="button" class="btn btn-warning">Modifier</button></a></td>
-                <td><button type="button" class="btn btn-danger">Effacer</button></a></td>
+                <td><button type="button" class="btn btn-danger">Effacer</button></a></td>  --}}
     </div>
 </div>    
 @endsection
