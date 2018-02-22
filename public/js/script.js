@@ -232,6 +232,7 @@ function buy(nb5ct, nb10ct, nb20ct, nb50ct, nb1e,nb2e, price){
 function displayDrink(){
     $('#gobeletFond').addClass('gobeletBack');
     $('#gobeletFace').addClass('gobeletFront');
+    
 }
 
 function displayTouillette(){
@@ -265,11 +266,13 @@ function removeTouillette(){
     $('#touillette').removeClass('touillette');
 }
 function removeDrink(){
+    console.log("removeDrink");
     $('#gobeletFond').removeClass('gobeletBack');
     $('#gobeletFace').removeClass('gobeletFront');
     $('#touillette').removeClass('touillette');
     $('#sucre').removeClass('boissonSucre');
     $('#boisson').removeClass().addClass('gobeletElement');
+
 }       
 
 /* Script*/
@@ -403,7 +406,7 @@ $(document).ready(function(){
         resetCoins();
         affiche("crédit : " + COMPTEUR + "€");
         
-        removeDrink();
+        // removeDrink();
         
     });
     

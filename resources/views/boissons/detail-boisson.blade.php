@@ -87,7 +87,7 @@
         <button type="submit" class="btn btn-success">Ajouter la recette</button>
         
         <hr>
-            <a href="{{ route('formModifRecette', [ $boisson->id, $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a>
+            {{--  <a href="{{ route('formModifRecette', [ $boisson->id, $ingredient->id ]) }}"><button type="button" class="btn btn-warning">Modifier recette</button></a>  --}}
             <a href="{{ route('listeBoissons')}}">
             <button type="button" class="btn btn-info">Annuler</button>
             </a>
